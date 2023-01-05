@@ -15,7 +15,7 @@ let weather = {
         const {temp , humidity} = data.main;
         const {speed} = data.wind;
         document.querySelector(".city").innerHTML = name;
-        document.querySelector(".icon").src = "http://openweathermap.org/img/wn/"+icon+".png";
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon +".png";
         document.querySelector(".description").innerHTML = description;
         document.querySelector(".temp").innerHTML = temp + " °C";
         document.querySelector(".humidity").innerHTML = "Humidity : "+  humidity + "%";
@@ -33,7 +33,6 @@ let weather = {
 let geocode = {
     reverseGeocode : function (latitude,longitude) {
     var api_key = '19b1600ea466481299a3d2f10d1b529a';
-
     var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
     var request_url = api_url
@@ -76,7 +75,7 @@ let geocode = {
     request.send();  // make the request
     },
 
-    getlocation:function(){
+    getlocation: function(){
         function success(data){
             geocode.reverseGeocode(data.coords.latitude,data.coords.longitude);
         }
@@ -87,16 +86,16 @@ let geocode = {
             weather.fetchWeather("Mumbai");
         }
     }
-}
+};
 
 document.querySelector(".search button").addEventListener("click",function(){
     weather.search();
-})
+});
 
 document.querySelector(".search-bar").addEventListener("keyup", function(event) {
     if(event.key == "Enter"){
         weather.search();
     }
-})
+});
 
 geocode.getlocation();
