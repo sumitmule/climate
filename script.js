@@ -55,6 +55,7 @@ let geocode = {
       if (request.status === 200){
         // Success!
         var data = JSON.parse(request.responseText);
+        console.log(data.results[0].components.city);
         weather.fetchWeather(data.results[0].components.city);
       } else if (request.status <= 500){
         // We reached our target server, but it returned an error
@@ -99,3 +100,7 @@ document.querySelector(".search-bar").addEventListener("keyup", function(event) 
 });
 
 geocode.getlocation();
+
+setTimeout(function () {
+  alert("If you are using a mobile device, please enter a city name.");
+}, 4000);
