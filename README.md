@@ -18,7 +18,7 @@ Geolocation API is used to get user location and based on that we fetch weather 
 2. Code Editor : VS Code
 
 ### Screenshot : 
-<img src="https://github.com/sumitmule/climate/blob/main/image.png" width="800">
+![image](https://github.com/sumitmule/climate/assets/111048440/2f08fccc-ee2e-4e10-8275-d1b0a7786bcc)
 
 ### Instructions :
 
